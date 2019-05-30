@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hotel Booking System</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="top-container">
+            <div class="top-container-text">
+                <div class="text">
+                    <p>
+                        Find Hotel<br />
+                     Book Hotel...
+                    </p>
+                </div>
+                <div>
+                    <button class="top-container-button">Add Plan</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-category">
+            <form id="form-fields" class="form">
+                <div>
+                    <p></p>
+                </div>
+                <div class="category">
+                    <div>
+                        <label class="Meal">Direct Booking: <br>Name</label>
+                        <input id="meal-name" name="fname" type="text" value="" />
+                    </div>
+                    <div>
+                        <label class="category-label"> Category </label>
+                        <select id="category" class="select">
+                            <option value="">City</option>
+                            <option value="Lunch" selected>Town</option>
+                            <option value="Dinner">Others</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="one">
+                    <label>Hotel Link</label>
+                    <input id="recipe-link" type="text" />
+                </div>
+                <div class="two">
+                    <label>When will you come?</label>
+                    <input id="cook-when" type="text" />
+                </div>
+                <div class="three">
+                    <label>Social Media Link</label>
+                    <input id="image-link" type="text" />
+                </div>
+                <div>
+                    <button type="submit" class="form-button">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="middle-container">
+            <input id="search-field" type="text" placeholder="e.g Sheraton Hotel Lagos" />
+            <button id="search-btn" class="middle-container-button">
+                Search hotel
+            </button>
+        </div>
+        <div id="meals" class="bottom-container">
+            <div class="bottom-container-image">
+                <p>Up to 40% off</p>
+                <img src="img/hotel-ibis.jpg" alt="hotelimg1">
+                <div>
+                    <p class="food">Lagos</p>
+                    <a href="">view hotel</a>
+                    <p>Monday - June 10, 2019</p>
+                </div>
+            </div>
+            <div class="bottom-container-image">
+                <p>Up to 63% off</p>
+                <img src="img/hotel-ibis.jpg" alt="hotelimg2">
+                <div>
+                    <p class="food">Abuja</p>
+                    <a href="">view hotel</a>
+                    <p>Tuesday - June 11, 2019</p>
+                </div>
+            </div>
+            <div class="bottom-container-image">
+                <p>Up to 35% off</p>
+                <img src="img/hotel-ibis.jpg" alt="hotelimg3"/> 
+                <div>
+                    <p class="food">Calabar</p>
+                    <a href="">view hotel</a>
+                    <p>Wednesday - June 12, 2019</p>
+                </div>
+            </div>
+            <div class="bottom-container-image">
+                <p>Up to 50% off</p>
+                <img src="img/hotel-ibis.jpg" alt="hotelimg4"/>
+                <div>
+                    <p class="food">Port Harcourt</p>
+                    <a href="">view hotel</a>
+                    <p>Monday - June 10, 2019</p>
+                </div>
+            </div>
+            <div class="bottom-container-image">
+                <p>Up to 47% off</p>
+                <img src="img/hotel-ibis.jpg" hotelimg5/>
+                <div>
+                    <p class="food">Owerre</p>
+                    <a href="">view hotel</a>
+                    <p>Monday - June 10, 2019</p>
+                </div>
+            </div>
+            <div class="bottom-container-image">
+                <p>Up to 55% off</p>
+                <img src="img/hotel-ibis.jpg" alt="hotelimg6"/>
+                <div>
+                    <p class="food">Uyo</p>
+                    <a href=""> view hotel</a>
+                    <p>Monday - June 10, 2019</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

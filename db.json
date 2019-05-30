@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Isaac",
+      "email": "isaac@gmail.com.com",
+      "gender": "male",
+      "role": "user"
+    }
+  ],
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Sherraton hotel",
+      "address": "Ikeja Lagos",
+      "category": "City"
+    },
+    {
+      "category": "someplace",
+      "imageUrl": "image.jpg",
+      "address": "lagos",
+      "id": 2
+    }
+  ]
+}
