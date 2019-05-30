@@ -135,7 +135,7 @@ form {
   z-index: 10;
   top: 150px;
   left: 830px;
-  padding: 15px 20px;
+  padding: 1px 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -184,6 +184,7 @@ form > div > input {
   color: white;
   margin-left: 10px;
   appearance: none;
+  margin-top: 17px;
 }
 
 select:required:invalid {

@@ -1,5 +1,41 @@
 $(function() {
+      
+         // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  READ ALL HOTELS LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      
+    let getHotels = () => {
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:3000/hotels',
+            data: 'json',
+            success: (data) => {
+                let result = '';
+                for (let i in data) {
+                    result += `
+                    <div class="bottom-container-image">
+                    <p>Up to 40% off</p>
+                    <img src="${data[i].imageUrl}" alt="hotelimg1">
+                    <div>
+                        <p class="food">${data[i].address}</p>
+                        <a href="">view hotel</a>
+                        <p>Monday - June 10, 2019</p>
+                    </div>
+                </div>
+                    `
+                }
+                // $('#meals').empty();
+                $('#div').html(result);
+            },
+            error: (e) => console.log('error', e)
+        });
+    }
+    getHotels();
         
+                  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  CREATE HOTELS FOR LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
     $("#submit").on("click", function(e) {
         e.preventDefault()
         // var $Category = $("Category")
@@ -26,47 +62,96 @@ $(function() {
             }
         })
     })
-})
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  CREATE BOOKINGS
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    $("#submit1").on("click", function(e) {
+        e.preventDefault()
+       
+        var bookings = {
+            name: $('#name').val(),
+            hotelsName: $('#hotelsName').val(),
+            categoryType: $('#categoryType').val(),
+            socialLinks: $('#socialLinks').val(),
+            visitDay: $('#visitDay').val(),
+
+        }
+        $.ajax({
+            method: "POST",
+            data: JSON.stringify(bookings),
+            dataType: 'json',
+            contentType: 'application/json',
+            url: "http://localhost:3000/bookings",
+            success: function(data) {
+                console.log(data)
+            },
+            error: function(err) {
+                console.log(err)
+            }
+        })
+    })
+         
+                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  READ ALL BOOKINGS FOR LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+               
+}) //end of jquery
 
 
 // example
-$('#search-btn').on('click', () => {
-    let s = {
-        searchParam: $('#search-field').val()
-    }
+//  function getHotels(){
+//     let s = {
+//         searchParam: $('#search-field').val()
+//     }
+//     $.ajax({
+//         type: 'get',
+//         url: 'localhost:3000/hotels/',
+//         data: JSON.stringify(s),
+//         dataType: 'json',
+//         contentType: 'application/json',
+//         success: (data) => {
+//             for (let i in data) {
+//                 if (data[i] === s.searchParam) {
+//                     // happenings
+//                     $("#meals").empty();
+//                     let address = data[i].address;
+//                     let imageUrl = data[i].imageUrl;
+//                     let name = data[i].name;
 
-    $.ajax({
-        type: 'post',
-        url: 'localhost:3000/hotels',
-        data: JSON.stringify(s),
-        dataType: 'json',
-        contentType: 'application/json',
-        success: (data) => {
-            for (let i in data) {
-                if (data[i] === s.searchParam) {
-                    // happenings
-                    $("#meals").empty();
-                    let address = data[i].address;
-                    let imageUrl = data[i].imageUrl;
-                    let name = data[i].name;
+//                     var result = `
+//                     <div class="bottom-container-image">
+//                     <p>Up to 40% off</p>
+//                     <p>${name}</p>
+//                     <img src="${imageUrl}" alt="hotelimg1">
+//                         <div>
+//                             <p class="food">${address}</p>
+//                             <a href="">view hotel</a>
+//                             <p>Monday - June 10, 2019</p>
+//                         </div>
+//                     </div>`
 
-                    var result = `
-                    <div class="bottom-container-image">
-                    <p>Up to 40% off</p>
-                    <p>${name}</p>
-                    <img src="${imageUrl}" alt="hotelimg1">
-                        <div>
-                            <p class="food">${address}</p>
-                            <a href="">view hotel</a>
-                            <p>Monday - June 10, 2019</p>
-                        </div>
-                    </div>`
-
-                    $("main").append(result);
-                }
-            }
-        },
-        error: (e) => console.log(e)
-    })
-})
+//                     $("main").append(result);
+//                 }
+//             }
+//         },
+//         error: (e) => console.log(e)
+//     })
+//  }
+// $('#search-btn').on('click', getHotels)
 

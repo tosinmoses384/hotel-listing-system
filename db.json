@@ -13,13 +13,46 @@
       "id": 1,
       "name": "Sherraton hotel",
       "address": "Ikeja Lagos",
-      "category": "City"
+      "category": "City",
+      "imageUrl": ""
     },
     {
       "category": "someplace",
-      "imageUrl": "image.jpg",
-      "address": "lagos",
+      "imageUrl": "",
+      "address": "yaba, lagos",
       "id": 2
+    },
+    {
+      "category": "someplace",
+      "imageUrl": "",
+      "address": "Lekki, lagos",
+      "id": 3
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "name": "Tunji Adeogun",
+      "hotelsName": "Sherraton Hotel",
+      "socialLinks": "@ogun123",
+      "categoryType": "City",
+      "visitDay": "19th June, 2019"
+    },
+    {
+      "id": 2,
+      "name": "Abba Thomson",
+      "hotelsName": "Shara Hotel",
+      "socialLinks": "@abbaThompson",
+      "categoryType": "City",
+      "visitDay": "30th June, 2019"
+    },
+    {
+      "name": "Adam adaramola",
+      "hotelsName": "Ocean city Hotel",
+      "socialLinks": "@AdamThompson",
+      "categoryType": "Town",
+      "visitDay": "31th May, 2019",
+      "id": 3
     }
   ]
 }
