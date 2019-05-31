@@ -1,5 +1,46 @@
 $(function() {
       
+//ADMIN SIGN IN
+$(document).ready(function () {
+
+        
+    $("#signup-btn").on("click", function(e) {
+        e.preventDefault()
+        var $user = $("#username").val();
+        var $password = $("#password").val();
+        if($user == "" || $password == ""){
+            alert("please fill all field");
+            //return;
+        }
+        
+        
+        console.log(password);
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:3000/admin"
+        }).done(function (data) {
+            if (data.length > 0){
+                for(var i=0; data.length > i; i++ ){
+                    if(data[i].adminId == $user && data[i].password == $password){
+                        window.location="main-admin.html";
+                    }
+                }
+            }
+            
+            $("#error").show();
+        });  
+    });
+
+});
+     
+
+
+
+
+
+
+
+
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  GET A SINGLE HOTEL FOR LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -55,6 +96,7 @@ $(function() {
                 //  UPDATE A HOTEL LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%              
 
+                var updatehotel = `<button id="button">update</button>`;
 
 
 
@@ -72,22 +114,25 @@ $(function() {
 
                   // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  DELETE A HOTEL LISTING
-                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%              
-                // $('#').on('click', () => {
-                //     var id = 
-                //     $.ajax({
-                //         type: 'DELETE',
-                //         dataType: 'json',
-                //         contentType: 'application/json',
-                //         url: 'localhost:3000/bookings/' + id,
-                //         success: (data) => {
-                //             console.log('deleted', data)
-                //         },
-                //         error: (e) => {
-                //             console.log(e)
-                //         }
-                //     })
-                // })
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
+                var deletehotel = `<button id="button">delete</button>`;
+                
+                $('#button').on('click', () => {
+                    console.log("its working");
+                    var id = $(this).parent().attr('id');
+                    $.ajax({
+                        type: 'DELETE',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        url: 'localhost:3000/hotels/' + id,
+                        success: (data) => {
+                            console.log('deleted', data)
+                        },
+                        error: (e) => {
+                            console.log(e)
+                        }
+                    })
+                })
 
          // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  READ ALL HOTELS LISTING
@@ -99,17 +144,21 @@ $(function() {
             url: 'http://localhost:3000/hotels',
             data: 'json',
             success: (data) => {
+                console.log(data);
                 let result = '';
                 for (let i in data) {
                     result += `
-                    <div class="bottom-container-image">
+                    <div id="${data[i].id}" class="bottom-container-image">
                     <p>${data[i].discount}</p>
                     <img src="${data[i].imageUrl}" alt="hotelimg1">
-                    <div>
+                
                         <p class="food">${data[i].address}</p>
                         <a href="">view hotel</a>
                         <p>24/7 per week</p>
-                    </div>
+                        <p>${deletehotel}</p>
+                        <p>${updatehotel}</p>
+
+                    
                 </div>
                     `
                 }
@@ -208,6 +257,10 @@ $(function() {
 }) //end of jquery
 
 
+ 
+function deleteHotel(){
+
+}
 
 
 

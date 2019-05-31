@@ -7,6 +7,7 @@
       "address": "Lagos",
       "name": "Sherraton hotel",
       "discount": "off 50%"
+      
     },
     {
       "category": "City",
@@ -49,19 +50,12 @@
       "id": 6
     },
     {
-      "category": "City",
-      "imageUrl": "https://media.api.timbu.com/img/big/eemjm-hotel-and-suites-limited-akwa-ibom-50415.jpg",
-      "address": "Kaduna",
-      "name": "comfort",
-      "discount": "off 55%",
-      "id": 7
-    },
-    {
       "category": "Town",
-      "address": "Lagos",
-      "name": "monument",
-      "discount": "38",
-      "id": 8
+      "imageUrl": "https://media.api.timbu.com/img/big/top-galaxy-hotels-kaduna-1.jpg",
+      "address": "Kaduna",
+      "name": "TopGalaxy",
+      "discount": "40",
+      "id": 7
     }
   ],
   "bookings": [
