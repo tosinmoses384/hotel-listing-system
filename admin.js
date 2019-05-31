@@ -1,5 +1,139 @@
 $(function() {
       
+//ADMIN SIGN IN
+$(document).ready(function () {
+
+        
+    $("#signup-btn").on("click", function(e) {
+        e.preventDefault()
+        var $user = $("#username").val();
+        var $password = $("#password").val();
+        if($user == "" || $password == ""){
+            alert("please fill all field");
+            //return;
+        }
+        
+        
+        console.log(password);
+        $.ajax({
+            method: "GET",
+            url: "http://localhost:3000/admin"
+        }).done(function (data) {
+            if (data.length > 0){
+                for(var i=0; data.length > i; i++ ){
+                    if(data[i].adminId == $user && data[i].password == $password){
+                        window.location="main-admin.html";
+                    }
+                }
+            }
+            
+            $("#error").show();
+        });  
+    });
+
+});
+     
+
+
+
+
+
+
+
+
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  GET A SINGLE HOTEL FOR LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  UPDATE A HOTEL LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          
+
+
+
+
+
+                    // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  UPDATE A HOTEL LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%              
+
+                var updatehotel = `<button id="button">update</button>`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+                  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  DELETE A HOTEL LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
+                var deletehotel = `<button id="button">delete</button>`;
+                
+                $('#button').on('click', () => {
+                    console.log("its working");
+                    var id = $(this).parent().attr('id');
+                    $.ajax({
+                        type: 'DELETE',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        url: 'localhost:3000/hotels/' + id,
+                        success: (data) => {
+                            console.log('deleted', data)
+                        },
+                        error: (e) => {
+                            console.log(e)
+                        }
+                    })
+                })
+
          // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  READ ALL HOTELS LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -10,17 +144,21 @@ $(function() {
             url: 'http://localhost:3000/hotels',
             data: 'json',
             success: (data) => {
+                console.log(data);
                 let result = '';
                 for (let i in data) {
                     result += `
-                    <div class="bottom-container-image">
-                    <p>Up to 40% off</p>
+                    <div id="${data[i].id}" class="bottom-container-image">
+                    <p>${data[i].discount}</p>
                     <img src="${data[i].imageUrl}" alt="hotelimg1">
-                    <div>
+                
                         <p class="food">${data[i].address}</p>
                         <a href="">view hotel</a>
-                        <p>Monday - June 10, 2019</p>
-                    </div>
+                        <p>24/7 per week</p>
+                        <p>${deletehotel}</p>
+                        <p>${updatehotel}</p>
+
+                    
                 </div>
                     `
                 }
@@ -38,14 +176,14 @@ $(function() {
 
     $("#submit").on("click", function(e) {
         e.preventDefault()
-        // var $Category = $("Category")
-        // var $ImageURL = $("#ImageURL")
-        // var $Address = $("#Address")
-       
+    
         var hotels = {
             category: $('#category').val(),
             imageUrl: $('#imageUrl').val(),
             address: $('#address').val(),
+            name: $('#name').val(),
+            discount: $('#discount').val(),
+        
              
         }
         $.ajax({
@@ -85,13 +223,18 @@ $(function() {
             url: "http://localhost:3000/bookings",
             success: function(data) {
                 console.log(data)
+                $('#name').val('')
+                $('#hotelsName').val('')
+                $('#categoryType').val('')
+                $('#socialLinks').val('')
+                $('#visitDay').val('')
             },
             error: function(err) {
                 console.log(err)
             }
         })
     })
-         
+
                  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  READ ALL BOOKINGS FOR LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -109,9 +252,42 @@ $(function() {
 
 
 
-                
+
                
 }) //end of jquery
+
+
+ 
+function deleteHotel(){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // example
@@ -154,4 +330,5 @@ $(function() {
 //     })
 //  }
 // $('#search-btn').on('click', getHotels)
+
 

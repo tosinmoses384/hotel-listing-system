@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Hotel Booking System</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style1.css" />
   </head>
   <body>
     <div class="container">
@@ -15,8 +15,8 @@
             <div class="top-container-text">
                 <div class="text">
                     <p>
-                        Find Hotel<br />
-                     Book Hotel...
+                        Admin<br />
+                     Dashboard...
                     </p>
                 </div>
                 <!-- <div>
@@ -25,47 +25,43 @@
             </div>
         </div>
         <div class="form-category">
-            <form id="form-fields" class="form">
+                <form id="form-fields" class="form">
                     
-                <!-- <div>
-                    <p></p>
-                </div> -->
-                <div>
-                    
-                    <input id="signup-btn" type="submit" value="login" onlick=>
-                </div>
-                <div class="category">
-                    <div>
-                        <label class="Male">Direct Booking: <br>Name</label>
-                        <input id="name" name="fname" type="text" value="" />
-                    </div>
-                    <div>
-                        <label  class="category-label"> Category </label>
-                        <select id="categoryType" class="select">
-                            <option value="">City</option>
-                            <option value="Town" selected>Town</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="one">
-                    <label>Hotel Name</label>
-                    <input id="hotelsName" type="text" />
-                </div>
-                <div class="two">
-                    <label>When will you come?</label>
-                    <input id="visitDay" type="text" />
-                </div>
-                <div class="three">
-                    <label>Your Social Media Link</label>
-                    <input id="socialLinks" type="text" />
-                </div>
-                <div>
-                    <button id="submit1" type="submit" class="form-button">
-                        Submit
-                    </button>
-                </div>
-            </form>
+                        <!-- <div>
+                            <p></p>
+                        </div> -->
+                        <div class="category">
+                            <div>
+                                <label class="Male" style="font-weight:700; font-size:17px ">Create Hotel:<br>Discount in %</label>
+                                <input id="discount" name="fname" type="number" value="" />
+                            </div>
+                            <div>
+                                <label  class="category-label"> Category </label>
+                                <select id="category" class="select">
+                                    <option value="">City</option>
+                                    <option value="Town" selected>Town</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="one">
+                            <label>imageURL</label>
+                            <input id="imageUrl" type="text" />
+                        </div>
+                        <div class="two">
+                                <label>Address</label>
+                                <input id="address" type="text" />
+                            </div>
+                        <div class="three">
+                            <label>name</label>
+                            <input id="name" type="text" />
+                        </div>
+                        <div>
+                            <button id="submit" type="submit" class="form-button">
+                                Click to Create Hotel
+                            </button>
+                        </div>
+                    </form>
         </div>
         <div class="middle-container">
             <input id="search-field" type="text" placeholder="e.g Sheraton Hotel Lagos" />
