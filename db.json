@@ -1,32 +1,67 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "name": "Isaac",
-      "email": "isaac@gmail.com.com",
-      "gender": "male",
-      "role": "user"
-    }
-  ],
   "hotels": [
     {
       "id": 1,
-      "name": "Sherraton hotel",
-      "address": "Ikeja Lagos",
       "category": "City",
-      "imageUrl": ""
+      "imageUrl": "https://media.api.timbu.com/img/big/hotel-ibis-lagos-ikeja-lagos-47880.jpg?w=562&h=422&c=1",
+      "address": "Lagos",
+      "name": "Sherraton hotel",
+      "discount": "off 50%"
     },
     {
-      "category": "someplace",
-      "imageUrl": "",
-      "address": "yaba, lagos",
+      "category": "City",
+      "imageUrl": "https://media.api.timbu.com/img/big/summerset-continental-hotel-abuja-49682.jpg?w=562&h=422&c=1",
+      "address": "Abuja",
+      "name": "Boxman",
+      "discount": "off 45%",
       "id": 2
     },
     {
-      "category": "someplace",
-      "imageUrl": "",
-      "address": "Lekki, lagos",
+      "category": "City",
+      "imageUrl": "https://media.api.timbu.com/img/big/transcorp-metropolitan-hotel-conferencing-cross-river-59651.jpg",
+      "address": "Calabar",
+      "name": "Roman",
+      "discount": "off 45%",
       "id": 3
+    },
+    {
+      "category": "city",
+      "imageUrl": "https://media.api.timbu.com/img/big/dc736f023a0b28347bb89051af9120af.jpg",
+      "address": "Port Harcourt",
+      "name": "Alfred",
+      "discount": "off 35%",
+      "id": 4
+    },
+    {
+      "category": "City",
+      "imageUrl": "https://media.api.timbu.com/img/big/newton-hotels-limited-owerri-imo-56553.jpg",
+      "address": "Owerre",
+      "name": "Mario",
+      "discount": "off 49%",
+      "id": 5
+    },
+    {
+      "category": "City",
+      "imageUrl": "https://media.api.timbu.com/img/big/eemjm-hotel-and-suites-limited-akwa-ibom-50415.jpg",
+      "address": "Uyo",
+      "name": "Legacy",
+      "discount": "off 46%",
+      "id": 6
+    },
+    {
+      "category": "City",
+      "imageUrl": "https://media.api.timbu.com/img/big/eemjm-hotel-and-suites-limited-akwa-ibom-50415.jpg",
+      "address": "Kaduna",
+      "name": "comfort",
+      "discount": "off 55%",
+      "id": 7
+    },
+    {
+      "category": "Town",
+      "address": "Lagos",
+      "name": "monument",
+      "discount": "38",
+      "id": 8
     }
   ],
   "bookings": [
@@ -53,6 +88,38 @@
       "categoryType": "Town",
       "visitDay": "31th May, 2019",
       "id": 3
+    },
+    {
+      "name": "shola",
+      "hotelsName": "sherraton",
+      "categoryType": "",
+      "socialLinks": "www.yahoo.com",
+      "visitDay": "tuesday",
+      "id": 4
+    },
+    {
+      "name": "fkfukukuf",
+      "hotelsName": "jdjhgjhodkfgj9dgkjgjh",
+      "categoryType": "Town",
+      "socialLinks": "kjhhvkjgkjb",
+      "visitDay": "jvkhkjjgk",
+      "id": 5
+    },
+    {
+      "name": "",
+      "hotelsName": "",
+      "categoryType": "",
+      "socialLinks": "",
+      "visitDay": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "hotelsName": "",
+      "categoryType": "",
+      "socialLinks": "",
+      "visitDay": "",
+      "id": 7
     }
   ]
 }

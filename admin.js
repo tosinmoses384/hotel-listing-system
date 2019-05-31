@@ -1,5 +1,94 @@
 $(function() {
       
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  GET A SINGLE HOTEL FOR LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  UPDATE A HOTEL LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          
+
+
+
+
+
+                    // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  UPDATE A HOTEL LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+                  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                //  DELETE A HOTEL LISTING
+                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%              
+                // $('#').on('click', () => {
+                //     var id = 
+                //     $.ajax({
+                //         type: 'DELETE',
+                //         dataType: 'json',
+                //         contentType: 'application/json',
+                //         url: 'localhost:3000/bookings/' + id,
+                //         success: (data) => {
+                //             console.log('deleted', data)
+                //         },
+                //         error: (e) => {
+                //             console.log(e)
+                //         }
+                //     })
+                // })
+
          // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  READ ALL HOTELS LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,12 +103,12 @@ $(function() {
                 for (let i in data) {
                     result += `
                     <div class="bottom-container-image">
-                    <p>Up to 40% off</p>
+                    <p>${data[i].discount}</p>
                     <img src="${data[i].imageUrl}" alt="hotelimg1">
                     <div>
                         <p class="food">${data[i].address}</p>
                         <a href="">view hotel</a>
-                        <p>Monday - June 10, 2019</p>
+                        <p>24/7 per week</p>
                     </div>
                 </div>
                     `
@@ -38,14 +127,14 @@ $(function() {
 
     $("#submit").on("click", function(e) {
         e.preventDefault()
-        // var $Category = $("Category")
-        // var $ImageURL = $("#ImageURL")
-        // var $Address = $("#Address")
-       
+    
         var hotels = {
             category: $('#category').val(),
             imageUrl: $('#imageUrl').val(),
             address: $('#address').val(),
+            name: $('#name').val(),
+            discount: $('#discount').val(),
+        
              
         }
         $.ajax({
@@ -85,13 +174,18 @@ $(function() {
             url: "http://localhost:3000/bookings",
             success: function(data) {
                 console.log(data)
+                $('#name').val('')
+                $('#hotelsName').val('')
+                $('#categoryType').val('')
+                $('#socialLinks').val('')
+                $('#visitDay').val('')
             },
             error: function(err) {
                 console.log(err)
             }
         })
     })
-         
+
                  // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  READ ALL BOOKINGS FOR LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -109,9 +203,38 @@ $(function() {
 
 
 
-                
+
                
 }) //end of jquery
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // example
@@ -154,4 +277,5 @@ $(function() {
 //     })
 //  }
 // $('#search-btn').on('click', getHotels)
+
 
