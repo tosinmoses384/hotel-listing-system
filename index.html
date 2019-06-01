@@ -25,15 +25,20 @@
             </div>
         </div>
         <div class="form-category">
+            <div id="loginForm">
+                <input id="adminEmail" placeholder="Enter Email" type="text" required>
+                <input id="passWORD" placeholder="password" type="text" required>
+                <button id="adminLogin" type="submit" onclick="login()">Login</button>
+            </div>
+                
             <form id="form-fields" class="form">
                     
                 <!-- <div>
                     <p></p>
                 </div> -->
-                <div>
+                
                     
-                    <input id="signup-btn" type="submit" value="login" onlick=>
-                </div>
+                
                 <div class="category">
                     <div>
                         <label class="Male">Direct Booking: <br>Name</label>
@@ -133,5 +138,18 @@
     </div>
     <script src="jquery.js"></script>
     <script src="admin.js"></script>
+    <script>
+    function login() {
+        var user = document.getElementById("adminEmail").value;
+        var password = document.getElementById("passWORD").value;
+        if(user === "" || password === ""){
+            alert("please fill all field");
+        } else if (user === "moses" && password === "moses") {
+            window.location = "main-admin.html";
+
+        }
+
+    }
+    </script>
   </body>
 </html>

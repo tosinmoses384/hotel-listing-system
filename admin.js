@@ -5,88 +5,58 @@ $(document).ready(function () {
 
         
     $("#signup-btn").on("click", function(e) {
-        e.preventDefault()
-        var $user = $("#username").val();
-        var $password = $("#password").val();
-        if($user == "" || $password == ""){
-            alert("please fill all field");
-            //return;
-        }
         
         
-        console.log(password);
-        $.ajax({
-            method: "GET",
-            url: "http://localhost:3000/admin"
-        }).done(function (data) {
-            if (data.length > 0){
-                for(var i=0; data.length > i; i++ ){
-                    if(data[i].adminId == $user && data[i].password == $password){
-                        window.location="main-admin.html";
-                    }
-                }
-            }
+        // console.log(password);
+        // $.ajax({
+        //     method: "GeT",
+        //     url: "http://localhost:3000/user"
+        // }).done(function (data) {
+        //     if (data.length > 0){
+        //         for(var i=0; data.length > i; i++ ){
+        //             if(data[i].adminId == user && data[i].password == password){
+        //             }
+        //         }
+        //     }
             
-            $("#error").show();
-        });  
+        //     $("#error").show();
+        // });  
     });
 
 });
-     
-
-
-
-
-
-
-
-
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  GET A SINGLE HOTEL FOR LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                // $(document).ready(() => {
+                //     $('#search-field').keyup(() => {
+                //         $('#meals').html('')
+                //         let searchField = $('#search-field').val();
+                //         let expression = new RegExp(searchField, 'i');
+                //         $.getJSON('db.json', (data) => {
+                //             $.each(data, (key, value) => {
+                //                 if (value.name.search(searchField) != -1) {
+                //                     let result = `
+                //                 <div class="bottom-container-image">
+                //                     <p>Up to 40% off</p>
+                //                         <p>${value.name}</p>
+                //                     <img src="${value.imageUrl}" alt="hotelimg1">
+                //                 <div>
+                //                     <p class="food">${value.address}</p>
+                //                     <a href="">view hotel</a>
+                //                     <p>Monday - June 10, 2019</p>
+                //                 </div>
+                //                 </div>`
+                //                     $('#meals').append(result);
+                //                 }
+                //             })
+                //         })
+                //     })
+                // })
+                
+                
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-               // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                //  UPDATE A HOTEL LISTING
-                // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                          
 
 
 
@@ -96,7 +66,7 @@ $(document).ready(function () {
                 //  UPDATE A HOTEL LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%              
 
-                var updatehotel = `<button id="button">update</button>`;
+                
 
 
 
@@ -106,16 +76,12 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-                 
 
                   // %%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 //  DELETE A HOTEL LISTING
                 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%      
                 var deletehotel = `<button id="button">delete</button>`;
+                var updatehotel = `<button id="button">update</button>`;
                 
                 $('#button').on('click', () => {
                     console.log("its working");
@@ -125,7 +91,7 @@ $(document).ready(function () {
                         dataType: 'json',
                         contentType: 'application/json',
                         url: 'localhost:3000/hotels/' + id,
-                        success: (data) => {
+                        success: () => {
                             console.log('deleted', data)
                         },
                         error: (e) => {
@@ -151,18 +117,18 @@ $(document).ready(function () {
                     <div id="${data[i].id}" class="bottom-container-image">
                     <p>${data[i].discount}</p>
                     <img src="${data[i].imageUrl}" alt="hotelimg1">
-                
+                <div>
                         <p class="food">${data[i].address}</p>
                         <a href="">view hotel</a>
                         <p>24/7 per week</p>
                         <p>${deletehotel}</p>
                         <p>${updatehotel}</p>
-
+                </div>
                     
                 </div>
                     `
                 }
-                // $('#meals').empty();
+
                 $('#div').html(result);
             },
             error: (e) => console.log('error', e)
@@ -182,7 +148,7 @@ $(document).ready(function () {
             imageUrl: $('#imageUrl').val(),
             address: $('#address').val(),
             name: $('#name').val(),
-            discount: $('#discount').val(),
+            discount: $('#discount').val()
         
              
         }
@@ -194,6 +160,11 @@ $(document).ready(function () {
             url: "http://localhost:3000/hotels",
             success: function(data) {
                 console.log(data)
+                $('#category').val('')
+                $('#imageUrl').val('')
+                $('#address').val('')
+                $('##name').val('')
+                $('#discount').val('')
             },
             error: function(err) {
                 console.log(err)
