@@ -7,7 +7,6 @@
       "address": "Lagos",
       "name": "Sherraton hotel",
       "discount": "off 50%"
-      
     },
     {
       "category": "City",
@@ -54,8 +53,40 @@
       "imageUrl": "https://media.api.timbu.com/img/big/top-galaxy-hotels-kaduna-1.jpg",
       "address": "Kaduna",
       "name": "TopGalaxy",
-      "discount": "40",
+      "discount": "off 40%",
       "id": 7
+    },
+    {
+      "category": "Others",
+      "imageUrl": "https://media.api.timbu.com/img/big/ee43cadeb95b36d6bfcc3da413643ab0.JPG?w=562&h=422&c=1",
+      "address": "Onitsha",
+      "name": "City Hotel",
+      "discount": " off 65",
+      "id": 8
+    },
+    {
+      "category": "",
+      "imageUrl": "http://media.api.timbu.com/img/big/de-grand-apartment-ltd-gombe-1.jpg?w=238&h=179&c=true",
+      "address": "Apartment Gombe",
+      "name": "De-Grand Apartment",
+      "discount": "off 50%",
+      "id": 9
+    },
+    {
+      "category": "",
+      "imageUrl": "http://media.api.timbu.com/img/big/de-grand-apartment-ltd-gombe-1.jpg?w=238&h=179&c=true",
+      "address": "Gombe",
+      "name": "De-Grand Apartment",
+      "discount": "off 50%",
+      "id": 10
+    },
+    {
+      "category": "",
+      "imageUrl": "http://media.api.timbu.com/img/big/de-grand-apartment-ltd-gombe-1.jpg?w=238&h=179&c=true",
+      "address": "Gombe",
+      "name": "De-Grand Apartment",
+      "discount": "off 50%",
+      "id": 11
     }
   ],
   "bookings": [
@@ -84,36 +115,12 @@
       "id": 3
     },
     {
-      "name": "shola",
-      "hotelsName": "sherraton",
-      "categoryType": "",
-      "socialLinks": "www.yahoo.com",
-      "visitDay": "tuesday",
-      "id": 4
-    },
-    {
-      "name": "fkfukukuf",
-      "hotelsName": "jdjhgjhodkfgj9dgkjgjh",
+      "name": "Tosin",
+      "hotelsName": "Sharatin",
       "categoryType": "Town",
-      "socialLinks": "kjhhvkjgkjb",
-      "visitDay": "jvkhkjjgk",
-      "id": 5
-    },
-    {
-      "name": "",
-      "hotelsName": "",
-      "categoryType": "",
-      "socialLinks": "",
-      "visitDay": "",
-      "id": 6
-    },
-    {
-      "name": "",
-      "hotelsName": "",
-      "categoryType": "",
-      "socialLinks": "",
-      "visitDay": "",
-      "id": 7
+      "socialLinks": "@Tboy",
+      "visitDay": "May 30",
+      "id": 4
     }
   ]
 }
